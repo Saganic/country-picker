@@ -29,6 +29,65 @@ Create your `<select>` with the `.selectpicker` and `.countrypicker` class. The 
 
     <select class="selectpicker countrypicker"></select>
 
+# Bootstrap 4 beta-2
+
+Bootstrap-select is still incompatible (ver. 1.12.4) with Bootstrap 4 beta-2.
+Include an additional CSS file, or put the following between <style></style> tags on the page you're displaying the country-picker on:
+
+	/*
+	Make bootstrap-select work with bootstrap 4 see:
+	https://github.com/silviomoreto/bootstrap-select/issues/1135
+	*/
+	.dropdown-toggle.btn-default {
+	  color: #292b2c;
+	  background-color: #fff;
+	  border-color: #ccc;
+	}
+	.bootstrap-select.show > .dropdown-menu > .dropdown-menu {
+	  display: block;
+	}
+	.bootstrap-select > .dropdown-menu > .dropdown-menu li.hidden {
+	  display: none;
+	}
+	.bootstrap-select > .dropdown-menu > .dropdown-menu li a {
+	  display: block;
+	  width: 100%;
+	  padding: 3px 1.5rem;
+	  clear: both;
+	  font-weight: 400;
+	  color: #292b2c;
+	  text-align: inherit;
+	  white-space: nowrap;
+	  background: 0 0;
+	  border: 0;
+	  text-decoration: none;
+	}
+	.bootstrap-select > .dropdown-menu > .dropdown-menu li a:hover {
+	  background-color: #f4f4f4;
+	}
+	.bootstrap-select > .dropdown-toggle {
+	  width: 100%;
+	}
+	.dropdown-menu > li.active > a {
+	  color: #fff !important;
+	  background-color: #337ab7 !important;
+	}
+	.bootstrap-select .check-mark {
+	  line-height: 14px;
+	}
+	.bootstrap-select .check-mark::after {
+	  font-family: "FontAwesome";
+	  content: "\f00c";
+	}
+	.bootstrap-select button {
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	}
+	
+	/* Make filled out selects be the same size as empty selects */
+	.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+	  display: inline !important;
+	}
 
 # Examples
 
