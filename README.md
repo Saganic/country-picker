@@ -29,6 +29,12 @@ Create your `<select>` with the `.selectpicker` and `.countrypicker` class. The 
 
     <select class="selectpicker countrypicker"></select>
 
+# Copyright and license
+
+Copyright (C) 2017-2018 country-picker
+
+Licensed under [the MIT license](LICENSE).
+
 # Bootstrap 4 beta-2
 
 Bootstrap-select is still incompatible (ver. 1.12.4) with Bootstrap 4 beta-2.
@@ -83,7 +89,7 @@ Include an additional CSS file, or put the following between <style></style> tag
 	  overflow: hidden;
 	  text-overflow: ellipsis;
 	}
-	
+
 	/* Make filled out selects be the same size as empty selects */
 	.bootstrap-select.btn-group .dropdown-toggle .filter-option {
 	  display: inline !important;
