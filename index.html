@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/xcode.min.css" />
 	<style>
 		body {
 				overflow-x:hidden;
@@ -18,34 +19,35 @@
 		}
 
 		.col-lg-3 {
-				margin-bottom: 15px;
-				text-align: center;
-				border: 1px solid #e5e5e5;
-				background-color: #fcfcfc;
-				min-height: 300px;
-				padding-top: 30px;
-				padding-bottom: 30px;
-				margin-left:1em;
-				margin-right:1em;
+			text-align: center;
+			padding: 30px;
+			margin: 0;
+			box-sizing: border-box;
+		}
 
+		.example {
+			border: 1px solid #e5e5e5;
+			background-color: #fcfcfc;
+			padding: 1em;
+		}
+
+		.example .html {
+			margin: 2em 0em 0em 0em;
+		}
+
+		pre {
+			padding: 0;
 		}
 
 		.html {
-				padding: 2px 4px;
-				font-size: 90%;
-				color: #c7254e;
-				background-color: #f9f2f4;
-				border-radius: 4px;
+			display: block;
+			padding: none;
+			word-break: break-all;
+			word-wrap: break-word;
 		}
 
-		.attr {
-				display: block;
-				padding: 1em;
-				margin-top: 10%;
-				font-size: 90%;
-				color: #09a049;
-				background-color: #f9f2f4;
-				border-radius: 4px;
+		.html .xml {
+			min-height: 6em;
 		}
 
 		.bs-docs-header {
@@ -105,17 +107,23 @@
 			<div class="col-md-12">
 				<h1>Dependencies</h1>
 				<hr>
-				<p>Requires jQuery v1.8.0+, Bootstrap’s dropdown.js component, and Bootstrap's CSS. If you're not already using Bootstrap in your project, a precompiled version of the minimum requirements can be downloaded <a href="http://getbootstrap.com/customize/?id=7830063837006f6fc84f">here.</a></p>
+				<ul>
+					<li><a href="http://jquery.com/download/">jQuery >= v1.8.0</a></li>
+					<li><a href="http://getbootstrap.com/docs/3.3/getting-started/#download">Bootstrap 3 CSS</a></li>
+					<li><a href="https://getbootstrap.com/docs/3.3/javascript/#dropdowns">Bootstrap 3 dropdown.js</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Usage</h1>
 				<hr>
-				<p>Create your <code>&lt;select&gt;</code> with the <code>.selectpicker</code> and <code>.bootstrap-select-country</code> class. The data-api from bootstrap-select will automatically apply a basic theme to these elements. Then the data-api from bootstrap-select-country will populate the select with countries.</p>
+				<p>Create your <code class="hljs-name">&lt;select&gt;</code> with the <code class="hljs-name">.selectpicker</code> and <code class="hljs-name">.countrypicker</code> class.
+					The data-api from bootstrap-select will automatically apply a basic theme to these elements.
+					Then the data-api from bootstrap-select-country will populate the select with countries.</p>
 			</div>
 			<div class="col-md-12">
-				<pre><code class="html">&lt;select class=&quot;selectpicker bootstrap-select-country&quot;&gt;&lt;/select&gt;</code></pre>
+				<pre><code class="html">&lt;select class=&quot;selectpicker countrypicker&quot;&gt;&lt;/select&gt;</code></pre>
 			</div>
 		</div>
 
@@ -125,22 +133,44 @@
 			</div>
 			<hr>
 			<div class="col-lg-3">
-				<h4>Data Default</h4>
-				<p>Set default country</p>
-				<select class="selectpicker countrypicker" data-default="United States" data-flag="false"></select>
-				<pre class="attr">data-default="United States"</pre>
+				<div class="example">
+					<h4>Basic Example</h4>
+					<p>Simple Country-Picker</p>
+					<select class="selectpicker countrypicker"></select>
+					<pre class="html"><code>&lt;select class=&quot;selectpicker countrypicker&quot;&gt;&lt;/select&gt;</code></pre>
+				</div>
 			</div>
 			<div class="col-lg-3">
-				<h4>Live Search</h4>
-				<p>Searchable with bootstrap-select.js</p>
-				<select class="selectpicker countrypicker" data-live-search="true" data-flag="false"></select>
-				<pre class="attr">data-live-search="true"</pre>
+				<div class="example">
+					<h4>Multi-select</h4>
+					<p>Multi-select enabled</p>
+					<select class="selectpicker countrypicker" multiple></select>
+					<pre class="html"><code>&lt;select class=&quot;selectpicker countrypicker&quot; multiple&gt;&lt;/select&gt;</code></pre>
+				</div>
 			</div>
 			<div class="col-lg-3">
-				<h4>With Flag</h4>
-				<p>Searchable, data default with flags</p>
-				<select class="selectpicker countrypicker" data-live-search="true" data-default="United States" data-flag="true"></select>
-				<pre class="attr">data-flag="true"</pre>
+				<div class="example">
+					<h4>Data Default</h4>
+					<p>Set default country</p>
+					<select class="selectpicker countrypicker" data-default="United States"></select>
+					<pre class="html"><code>&lt;select class=&quot;selectpicker countrypicker&quot; data-default=&quot;United States&quot;&gt;&lt;/select&gt;</code></pre>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="example">
+					<h4>Live Search</h4>
+					<p>Searchable with bootstrap-select.js</p>
+					<select class="selectpicker countrypicker" data-live-search="true"></select>
+					<pre class="html"><code>&lt;select class=&quot;selectpicker countrypicker&quot; data-live-search=&quot;true&quot; &gt;&lt;/select&gt;</code></pre>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="example">
+					<h4>With Flag</h4>
+					<p>Searchable, data default with flags</p>
+					<select class="selectpicker countrypicker" data-flag="true"></select>
+					<pre class="html"><code>&lt;select class=&quot;selectpicker countrypicker&quot; data-flag=&quot;true&quot; &gt;&lt;/select&gt;</code></pre>
+				</div>
 			</div>
 		</div>
 		<div class="container text-center">
@@ -154,10 +184,11 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-	<script src="js/countrypicker.js"></script>
-	<script>
 
-	</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<script src="js/countrypicker.js"></script>
 </body>
 
 </html>
