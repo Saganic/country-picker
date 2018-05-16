@@ -1,172 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Country Select</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,shrink-to-fit=no">
-      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="js/dependancies/bootstrap-select-1.12.4/dist/css/bootstrap-select.min.css">
+	<title>Bootstrap Select Country</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,shrink-to-fit=no">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+	<style>
+		body {
+				overflow-x:hidden;
+		}
+
+		.container-fluid {
+				padding:0px;
+		}
+
+		.col-lg-3 {
+				margin-bottom: 15px;
+				text-align: center;
+				border: 1px solid #e5e5e5;
+				background-color: #fcfcfc;
+				min-height: 300px;
+				padding-top: 30px;
+				padding-bottom: 30px;
+				margin-left:1em;
+				margin-right:1em;
+
+		}
+
+		.html {
+				padding: 2px 4px;
+				font-size: 90%;
+				color: #c7254e;
+				background-color: #f9f2f4;
+				border-radius: 4px;
+		}
+
+		.attr {
+				display: block;
+				padding: 1em;
+				margin-top: 10%;
+				font-size: 90%;
+				color: #09a049;
+				background-color: #f9f2f4;
+				border-radius: 4px;
+		}
+
+		.bs-docs-header {
+				margin-bottom: 0;
+				background: #337ab7;
+				color: #fff;
+				padding-top:80px;
+				padding-bottom:80px;
+				border-radius:0px !important;
+				margin-bottom:80px;
+		}
+
+		.bs-docs-header .aff,
+		.bs-docs-header .aff:hover,
+		.bs-docs-header .aff:active {
+				color: white!important;
+				text-decoration: underline;
+		}
+
+		.bs-docs-header .btn {
+				padding: 15px 30px;
+				font-size: 20px;
+				margin-top:30px;
+		}
+
+		.btn-outline-inverse, .btn-outline-inverse:active {
+				color: #fff!important;
+				background-color: transparent;
+				border-color: #fff;
+		}
+		.btn-outline-inverse:hover {
+				background-color:white!important;
+				color:#337ab7!important;
+		}
+
+		.row {
+				padding-left:5%;
+				padding-right:5%;
+		}
+	</style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="jumbotron text-center bs-docs-header" style="position:relative;">
-            <span class="glyphicon glyphicon-globe" style="font-size:16rem;"></span>
-            <h1>countrypicker</h1>
-            <h4>based on the popular <a class="aff" href="https://silviomoreto.github.io/bootstrap-select/" target="_blank">bootstrap-select</a></h4>
-            <p>countrypicker is a jQuery plugin that utilizes Bootstrap's dropdown.js and bootstrap-select to provide country data and styling to standard select elements.</p>
-            <a href="#" class="btn btn-outline-inverse btn-lg"><i class="fa fa-download"></i> Download (v 1.0)</a>
-        </div>
+	<div class="container-fluid">
+		<div class="jumbotron text-center bs-docs-header" style="position:relative;">
+			<span class="glyphicon glyphicon-globe" style="font-size:16rem;"></span>
+			<h1>bootstrap-select-country</h1>
+			<h4>based on the popular <a class="aff" href="https://silviomoreto.github.io/bootstrap-select/" target="_blank">bootstrap-select</a></h4>
+			<p>bootstrap-select-country is a jQuery plugin that utilizes Bootstrap's dropdown.js and bootstrap-select to provide country data and styling to standard select elements.</p>
+			<a href="https://github.com/mojoaxel/bootstrap-select-country/releases/latest" class="btn btn-outline-inverse btn-lg">
+				<i class="fa fa-download"></i>
+				<span>Download latest release</span>
+			</a>
+		</div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Dependencies</h1>
-                <hr>
-                <p>Requires jQuery v1.8.0+, Bootstrap’s dropdown.js component, and Bootstrap's CSS. If you're not already using Bootstrap in your project, a precompiled version of the minimum requirements can be downloaded <a href="http://getbootstrap.com/customize/?id=7830063837006f6fc84f">here.</a></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Usage</h1>
-                <hr>
-                <p>Create your <code>&lt;select&gt;</code> with the <code>.selectpicker</code> and <code>.countrypicker</code> class. The data-api from bootstrap-select will automatically apply a basic theme to these elements. Then the data-api from countrypicker will populate the select with countries.</p>
-            </div>
-            <div class="col-md-12">
-                <pre><code class="html">&lt;select class=&quot;selectpicker countrypicker&quot;&gt;&lt;/select&gt;</code></pre>
-                <br/>
-                <br/>
-            </div>
-        </div>
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Dependencies</h1>
+				<hr>
+				<p>Requires jQuery v1.8.0+, Bootstrap’s dropdown.js component, and Bootstrap's CSS. If you're not already using Bootstrap in your project, a precompiled version of the minimum requirements can be downloaded <a href="http://getbootstrap.com/customize/?id=7830063837006f6fc84f">here.</a></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Usage</h1>
+				<hr>
+				<p>Create your <code>&lt;select&gt;</code> with the <code>.selectpicker</code> and <code>.bootstrap-select-country</code> class. The data-api from bootstrap-select will automatically apply a basic theme to these elements. Then the data-api from bootstrap-select-country will populate the select with countries.</p>
+			</div>
+			<div class="col-md-12">
+				<pre><code class="html">&lt;select class=&quot;selectpicker bootstrap-select-country&quot;&gt;&lt;/select&gt;</code></pre>
+			</div>
+		</div>
 
-        <div class="row">
-          <div class="col-md-12">
-                <h1>Examples</h1>
-                <hr>
-            </div>
-            <div class="col-lg-3">
-                <h4>Data Default</h4>
-                <p>Set default country</p>
-                <select class="selectpicker countrypicker" data-default="United States" data-flag="false"></select>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <pre><code class="attr">data-default="United States"</code></pre>
-            </div>
-            <div class="col-lg-3">
-                <h4>Live Search</h4>
-                <p>Searchable with bootstrap-select.js</p>
-                <select class="selectpicker countrypicker" data-live-search="true" data-flag="false"></select>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <pre><code class="attr">data-live-search="true"</code></pre>
-            </div>
-            <div class="col-lg-3">
-                <h4>With Flag</h4>
-                <p>Searchable, data default with flags</p>
-                <select class="selectpicker countrypicker" data-live-search="true" data-default="United States" data-flag="true"></select>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <pre><code class="attr">data-flag="true"</code></pre>
-            </div>
-        </div>
-        <div class="container text-center">
-            <p class="text-muted">countrypicker is maintained by <a href="https://github.com/saganic">saganic</a>, <a href="https://github.com/caseyjhol">caseyjhol</a>,
-                <a href="https://github.com/t0xicCode">t0xicCode</a>, and the community.</p>
-        </div>
-    </div>
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Examples</h1>
+			</div>
+			<hr>
+			<div class="col-lg-3">
+				<h4>Data Default</h4>
+				<p>Set default country</p>
+				<select class="selectpicker countrypicker" data-default="United States" data-flag="false"></select>
+				<pre class="attr">data-default="United States"</pre>
+			</div>
+			<div class="col-lg-3">
+				<h4>Live Search</h4>
+				<p>Searchable with bootstrap-select.js</p>
+				<select class="selectpicker countrypicker" data-live-search="true" data-flag="false"></select>
+				<pre class="attr">data-live-search="true"</pre>
+			</div>
+			<div class="col-lg-3">
+				<h4>With Flag</h4>
+				<p>Searchable, data default with flags</p>
+				<select class="selectpicker countrypicker" data-live-search="true" data-default="United States" data-flag="true"></select>
+				<pre class="attr">data-flag="true"</pre>
+			</div>
+		</div>
+		<div class="container text-center">
+			<p class="text-muted">
+				<a href="https://www.npmjs.com/package/bootstrap-select-country">bootstrap-select-country</a> is maintained by <a href="https://github.com/mojoaxel">mojoaxel</a> and is based on <a href="https://github.com/Saganic/country-picker">countrypicker</a> by <a href="https://github.com/Saganic">Saganic</a>.
+			</p>
+		</div>
+	</div>
 
-    <!--Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/dependancies/bootstrap-select-1.12.4/dist/js/bootstrap-select.min.js"></script>
-    <script src="js/countrypicker.min.js"></script>
-    <style>
-        body {
-            overflow-x:hidden;
-        }
-        
-        .container-fluid{
-            padding:0px;
-        }
+	<!--Scripts-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+	<script src="js/countrypicker.js"></script>
+	<script>
 
-        .col-lg-3 {
-            margin-bottom: 15px;
-            text-align: center;
-            border: 1px solid #e5e5e5;
-            background-color: #fcfcfc;
-            min-height: 300px;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            margin-left:1em;
-            margin-right:1em;
-            
-        }
-
-        .html {
-            padding: 2px 4px;
-            font-size: 90%;
-            color: #c7254e;
-            background-color: #f9f2f4;
-            border-radius: 4px;
-        }
-
-        .attr {
-            padding: 2px 4px;
-            font-size: 90%;
-            color: #09a049;
-            background-color: #f9f2f4;
-            border-radius: 4px;
-        }
-
-        .bs-docs-header {
-            margin-bottom: 0;
-            background: #337ab7;
-            color: #fff;
-            padding-top:80px;
-            padding-bottom:80px;
-            border-radius:0px!important;
-            margin-bottom:80px;
-        }
-
-        .bs-docs-header .aff,
-        .bs-docs-header .aff:hover,
-        .bs-docs-header .aff:active {
-            color: white!important;
-            text-decoration: underline;
-        }
-
-        .bs-docs-header .btn {
-            padding: 15px 30px;
-            font-size: 20px;
-            margin-top:30px;
-        }
-
-        .btn-outline-inverse, .btn-outline-inverse:active {
-            color: #fff!important;
-            background-color: transparent;
-            border-color: #fff;
-        }
-        .btn-outline-inverse:hover{
-            background-color:white!important;
-            color:#337ab7!important;
-        }
-        
-        .row{
-            padding-left:5%;
-            padding-right:5%;
-        }
-    </style>
+	</script>
 </body>
 
 </html>
