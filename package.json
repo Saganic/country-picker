@@ -1,12 +1,11 @@
 {
   "name": "bootstrap-select-country",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A jQuery plugin that utilizes Bootstrap's dropdown.js and bootstrap-select to provide country data and styling to standard select elements.",
   "main": "js/countrypicker.js",
   "scripts": {
     "watch": "reload --browser",
     "build": "uglifyjs js/countrypicker.js --output js/countrypicker.min.js",
-
     "start": "npm run build && npm run watch",
     "version": "npm run build"
   },
