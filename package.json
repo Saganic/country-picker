@@ -1,0 +1,32 @@
+{
+  "name": "bootstrap-select-country",
+  "version": "1.0.0",
+  "description": "A jQuery plugin that utilizes Bootstrap's dropdown.js and bootstrap-select to provide country data and styling to standard select elements.",
+  "main": "js/countrypicker.js",
+  "scripts": {
+	},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mojoaxel/bootstrap-select-country.git"
+  },
+  "keywords": [
+    "boostrap",
+    "select",
+    "country-picker",
+    "dropdown"
+  ],
+  "author": "Chris Saganic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mojoaxel/bootstrap-select-country/issues"
+  },
+  "homepage": "https://github.com/mojoaxel/bootstrap-select-country#readme",
+  "dependencies": {},
+  "peerDependencies": {
+		"bootstrap": "^3.3.7",
+    "bootstrap-select": ">=1.12.4",
+    "jquery": ">=1.8"
+  },
+  "devDependencies": {
+  }
+}
