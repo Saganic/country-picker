@@ -1,5 +1,9 @@
-import countries from "i18n-iso-countries";
+import $ from 'jquery';
 
+import "world-flags-sprite/stylesheets/flags16.css";
+import "./bootstrap-select-country.css";
+
+import countries from "i18n-iso-countries";
 import langs_en from "i18n-iso-countries/langs/en.json";
 countries.registerLocale(langs_en);
 const langCountries = countries.getNames('en');
@@ -12,9 +16,6 @@ const allCountries = Object.keys(langCountries).map((code) => {
 });
 
 let countrypicker = function(opts) {
-	var countryInputs = $(this);
-	var countryList = "";
-
 	$(this).each(function(index, select) {
 		var $select = $(select);
 
@@ -22,63 +23,64 @@ let countrypicker = function(opts) {
 
 		var options = [];
 		if (flag) {
-				//for each build list with flag
+				/* create option for each existing country */
 				$.each(allCountries, function (index, country) {
-					var flagIcon = `css/flags/${country.code.toLowerCase()}.png`;
 					options.push(`<option
-						data-country-code="${country.code}"
-						data-tokens="${country.code} ${country.name}"
-						style='padding-left:25px;background-position: 4px 7px;background-image:url("${flagIcon}");background-repeat:no-repeat;'
-						value="${country.name}">${country.name}</option>`);
+						data-tokens="${country.code}"
+						class="option-with-flag"
+						value="${country.code}">${country.name}</option>`);
 				});
 
-				//add flags to button
+				/* after bootstrap-select finished loading add flogs to every option-btn */
 				$select.on('loaded.bs.select', function (e) {
-					var button = $(this).closest('.btn-group').children('.btn');
-					button.hide();
-					var selected = $(this).find(':selected');
-					if (selected && selected.length) {
-						var def = selected.data('country-code').toLowerCase();
-						var flagIcon = "css/flags/" + def + ".png";
-						button.css("background-size", '20px');
-						button.css("background-position", '10px 9px');
-						button.css("padding-left", '40px');
-						button.css("background-repeat", 'no-repeat');
-						button.css("background-image", "url('" + flagIcon + "'");
-					}
-					button.show();
+					$('a.option-with-flag').each(function() {
+						var $optionBtn = $(this);
+						if ($optionBtn.children('.inline-flag').length <= 0) {
+							var code = $optionBtn.data('tokens').toLowerCase();
+							var $flag = $(`<span class="inline-flag flag ${code}"></span>`);
+							$optionBtn.prepend($flag);
+						}
+					});
 				});
 
-				//change flag on select change
-				$select.on('change', function () {
-					var button = $(this).closest('.btn-group').children('.btn');
-					var selected = $(this).find(':selected');
-					if (selected && selected.length) {
-						var def = selected.data('country-code').toLowerCase();
-						var flagIcon = "css/flags/" + def + ".png";
-						button.css("background-size", '20px');
-						button.css("background-position", '10px 9px');
-						button.css("padding-left", '40px');
-						button.css("background-repeat", 'no-repeat');
-						button.css("background-image", "url('" + flagIcon + "'");
+				/* after bootstrap-select finished loading or selection changed add flag to the select btn */
+				$select.on('loaded.bs.select change', function (e) {
+					/* which country-codes are selected? */
+					var $selectedOptions = $(this).find(':selected');
+					var countrycodes = [];
+					$selectedOptions.each(function() {
+						countrycodes.push($(this).data('tokens').toLowerCase());
+					});
+
+					var $btn = $(this).parent().find('.btn .filter-option.pull-left');
+					$btn.removeClass().addClass('filter-option pull-left');
+
+					/* for now only show the flag if only one country is selected */
+					if (countrycodes.length === 1) {
+						countrycodes.forEach((countrycode) => {
+							$btn.addClass(`flag ${countrycode}`);
+						 });
 					}
 				});
 		} else {
 			//for each build list without flag
 			$.each(allCountries, function (index, country) {
 				options.push(`<option
-					data-country-code="${country.code}
+					data-countrycode="${country.code}
 					data-tokens="${country.code} ${country.name}"
 					value="${country.name}">${country.name}</option>`);
 			});
 		}
-		$select.html(options.join('\n'));
+
+		$select
+			.addClass('f16')
+			.html(options.join('\n'));
 
 		//check if default
-		var def = $select.data('default');
+		var defaultCountryName = $select.data('default');
 		//if there's a default, set it
-		if (def) {
-			$select.val(def);
+		if (defaultCountryName) {
+			$select.val(defaultCountryName);
 		}
 	});
 };

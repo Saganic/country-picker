@@ -1,0 +1,8 @@
+.countrypicker .inline-flag {
+	margin-right: 5px;
+}
+
+.countrypicker .filter-option.flag {
+	padding-left: 20px;
+	margin-top: 3px;
+}
