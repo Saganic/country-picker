@@ -68,7 +68,7 @@ let countrypicker = function(opts) {
 				options.push(`<option
 					data-countrycode="${country.code}
 					data-tokens="${country.code} ${country.name}"
-					value="${country.name}">${country.name}</option>`);
+					value="${country.code}">${country.name}</option>`);
 			});
 		}
 

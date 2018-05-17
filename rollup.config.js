@@ -18,7 +18,7 @@ export default {
 		name: 'countrypicker',
 		sourcemap: true,
 		globals: {
-			jquery: '$'
+			jquery: 'window.$'
 		},
 	},
 
