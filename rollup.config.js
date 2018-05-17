@@ -11,7 +11,7 @@ import urlInliner from 'postcss-url';
 const peerDependencies = Object.keys(require('./package.json').peerDependencies)
 
 export default {
-	input: 'js/bootstrap-select-country.js',
+	input: 'src/bootstrap-select-country.js',
 	output: {
 		file: 'dist/js/bootstrap-select-country.min.js',
 		format: 'iife',
