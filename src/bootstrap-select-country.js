@@ -80,7 +80,7 @@ let countrypicker = function(opts) {
 		var defaultCountryName = $select.data('default');
 		//if there's a default, set it
 		if (defaultCountryName) {
-			$select.val(defaultCountryName);
+			$select.val(defaultCountryName.split(',').map((v) => v.trim()));
 		}
 	});
 };
