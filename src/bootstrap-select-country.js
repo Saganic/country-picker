@@ -1,8 +1,5 @@
 import $ from 'jquery';
 
-import "world-flags-sprite/stylesheets/flags16.css";
-import "./bootstrap-select-country.css";
-
 import countries from "i18n-iso-countries";
 import langs_en from "i18n-iso-countries/langs/en.json";
 countries.registerLocale(langs_en);
