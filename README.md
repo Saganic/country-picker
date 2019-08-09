@@ -8,7 +8,10 @@ bootstrap-select-country is a jQuery plugin that utilizes Bootstrap's dropdown.j
 
 ## Dependencies
 
-Requires jQuery v1.8.0+, Bootstrap’s dropdown.js component, and Bootstrap's CSS. If you're not already using Bootstrap in your project, a precompiled version of the minimum requirements can be downloaded [here.](http://getbootstrap.com/customize/?id=7830063837006f6fc84f)
+- [jQuery v1.8.0+](https://jquery.com)
+- [Bootstrap 3 and its CSS](https://getbootstrap.com/docs/3.3/)
+- [bootstrap-select](https://developer.snapappointments.com/bootstrap-select/)
+
 
 ## Usage
 
@@ -16,6 +19,39 @@ Create your `<select>` with the `.selectpicker` and `.countrypicker` class. The 
 
 ```html
 <select class="selectpicker countrypicker"></select>
+```
+
+### Minimal example
+
+Here is a [minimal example](https://jsbin.com/xacuyin/edit?html,output):
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Bin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  
+  <link rel="stylesheet" href="//unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="//unpkg.com/bootstrap-select@1.12.4/dist/css/bootstrap-select.min.css" type="text/css" />
+  <link rel="stylesheet" href="//unpkg.com/bootstrap-select-country@4.0.0/dist/css/bootstrap-select-country.min.css" type="text/css" />
+
+  <script src="//unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//unpkg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  <script src="//unpkg.com/bootstrap-select@1.12.4/dist/js/bootstrap-select.min.js"></script>
+  <script src="//unpkg.com/bootstrap-select-country@4.0.0/dist/js/bootstrap-select-country.min.js"></script>
+  
+</head>
+<body>
+  <select class="selectpicker countrypicker" data-flag="true" ></select>
+
+  <script>
+    $('.countrypicker').countrypicker();
+  </script>
+  
+</body>
+</html>
 ```
 
 ## Copyright and license
