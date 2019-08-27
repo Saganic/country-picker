@@ -18,10 +18,19 @@ let countrypicker = function(opts) {
 
 		var flag = $select.data('flag');
 
+		var countries = allCountries;
+		
+		// filter countries of an option "data-countries" exist"
+		var selectedCountries = $select.data('countries');
+		if (selectedCountries && selectedCountries.length) {
+			selectedCountries = selectedCountries.toUpperCase().split(',');
+			countries = countries.filter(c => selectedCountries.includes(c.code));
+		}
+
 		var options = [];
 		if (flag) {
 				/* create option for each existing country */
-				$.each(allCountries, function (index, country) {
+				$.each(countries, function (index, country) {
 					options.push(`<option
 						data-tokens="${country.code}"
 						class="option-with-flag"
@@ -61,7 +70,7 @@ let countrypicker = function(opts) {
 				});
 		} else {
 			//for each build list without flag
-			$.each(allCountries, function (index, country) {
+			$.each(countries, function (index, country) {
 				options.push(`<option
 					data-countrycode="${country.code}
 					data-tokens="${country.code} ${country.name}"
