@@ -25,6 +25,10 @@
     "dropdown"
   ],
   "author": "Alexander Wunschik <mail@wunschik.net>",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/mojoaxel"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mojoaxel/bootstrap-select-country/issues"
