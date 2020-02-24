@@ -33,20 +33,9 @@ let countrypicker = function(opts) {
 				$.each(countries, function (index, country) {
 					options.push(`<option
 						data-tokens="${country.code}"
+						data-icon="inline-flag flag ${country.code}.toLowerCase()"
 						class="option-with-flag"
 						value="${country.code}">${country.name}</option>`);
-				});
-
-				/* after bootstrap-select finished loading add flogs to every option-btn */
-				$select.on('loaded.bs.select', function (e) {
-					$('a.option-with-flag').each(function() {
-						var $optionBtn = $(this);
-						if ($optionBtn.children('.inline-flag').length <= 0) {
-							var code = $optionBtn.data('tokens').toLowerCase();
-							var $flag = $(`<span class="inline-flag flag ${code}"></span>`);
-							$optionBtn.prepend($flag);
-						}
-					});
 				});
 
 				/* after bootstrap-select finished loading or selection changed add flag to the select btn */
