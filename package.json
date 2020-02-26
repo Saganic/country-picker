@@ -55,8 +55,8 @@
     "rollup-watch": "^4.3.1"
   },
   "peerDependencies": {
-    "bootstrap": "^3.3.7",
-    "bootstrap-select": ">=1.12.4",
+    "bootstrap": "^3.3",
+    "bootstrap-select": "~1.12",
     "jquery": ">=1.8"
   }
 }
