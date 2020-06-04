@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-select-country",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "A jQuery plugin that utilizes Bootstrap's dropdown.js and bootstrap-select to provide country data and styling to standard select elements.",
   "main": "dist/js/bootstrap-select-country.min.js",
   "scripts": {
